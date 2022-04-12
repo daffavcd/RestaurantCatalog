@@ -41,7 +41,9 @@
   "dependencies": {
     "@fontsource/open-sans": "^4.5.8",
     "@fontsource/poppins": "^4.5.5",
+    "expose-loader": "^0.7.5",
     "fontsource-poppins": "^4.0.0",
+    "jquery": "^2.2.4",
     "poppins-font": "^1.0.1",
     "rater-js": "^1.0.1",
     "regenerator-runtime": "^0.13.5",
