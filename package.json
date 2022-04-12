@@ -43,6 +43,8 @@
     "@fontsource/poppins": "^4.5.5",
     "fontsource-poppins": "^4.0.0",
     "poppins-font": "^1.0.1",
-    "regenerator-runtime": "^0.13.5"
+    "rater-js": "^1.0.1",
+    "regenerator-runtime": "^0.13.5",
+    "stars-rating": "^1.1.0"
   }
 }
