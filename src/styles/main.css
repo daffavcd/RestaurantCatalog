@@ -1,16 +1,9 @@
-@media screen and (max-width: 767px) {
-  body {
-    display: grid;
-    grid-template-columns: 300px auto;
-  }
-  #drawer {
-    position: relative;
-    transform: translate(0, 0);
-  }
+#myLinks {
+  display: none;
+}
 
-  #hamburger {
-    display: none;
-  }
+.topnav {
+  display: none;
 }
 
 @keyframes fadeIn {
@@ -153,6 +146,15 @@ li a:hover,
   transform: scale(1.004);
 }
 
+.starbuck-overlay {
+  transform-origin: 65% 75%;
+  transition: transform 1s, filter 0.5s ease-out;
+}
+
+.starbuck-overlay:hover {
+  transform: scale(1.08);
+}
+
 .explore-image img {
   transition: transform 1s, filter 0.5s ease-out;
 }
@@ -285,4 +287,71 @@ img {
 .my-ul {
   position: absolute;
   right: 15%;
+}
+
+@media screen and (max-width: 767px) {
+  .topnav {
+    display: block;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+
+  #nav-desktop {
+    display: none;
+  }
+
+  .bg-black {
+    margin-top: 50px;
+  }
+
+  .text-head {
+    font-size: 2em;
+  }
+
+  .card {
+    flex: 1 0 100%;
+    margin: 0px 10px 25px 0px;
+  }
+
+  .text-head2 {
+    display: none;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: #feb139;
+    color: black;
+  }
+
+  .active {
+    color: white;
+  }
+
+  #logo-nav {
+    width: 150px;
+  }
+
+  .icon {
+    margin: 7px;
+  }
 }
