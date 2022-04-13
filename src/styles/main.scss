@@ -1,3 +1,7 @@
+$orange-main: #feb139;
+$orange-badge: #ffd36e;
+$white-main: #ffffff;
+
 #myLinks {
   display: none;
 }
@@ -55,8 +59,8 @@
   position: absolute;
   top: -50px;
   left: 0;
-  background-color: white;
-  color: #feb139;
+  background-color: $white-main;
+  color: $orange-main;
   padding: 8px;
   z-index: 100;
 }
@@ -104,7 +108,7 @@ li {
 li a,
 .dropbtn {
   display: inline-block;
-  color: white;
+  color: $white-main;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -112,11 +116,11 @@ li a,
 
 li a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #feb139;
+  background-color: $orange-main;
 }
 
 .container {
-  /* background-color: white; */
+  /* background-color: $white-main; */
   display: flex;
 }
 
@@ -130,7 +134,7 @@ li a:hover,
 }
 
 .white-nav {
-  background-color: white;
+  background-color: $white-main;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 22%);
 }
 
@@ -176,7 +180,7 @@ li a:hover,
 
 .my-footer {
   padding: 20px;
-  background-color: aliceblue;
+  background-color: #f3f6f9;
 }
 
 .row {
@@ -209,7 +213,7 @@ li a:hover,
 
 .card-body {
   padding: 2px 16px;
-  background-color: white;
+  background-color: $white-main;
 }
 
 .p-15 {
@@ -225,7 +229,7 @@ img {
   position: absolute;
   top: 8px;
   left: 8px;
-  background-color: #ffd36e;
+  background-color: $orange-badge;
   padding: 5px;
   border-radius: 1.5px;
   opacity: 0.9;
@@ -274,12 +278,12 @@ img {
 
 .text-head {
   font-size: 4em;
-  color: white;
+  color: $white-main;
 }
 
 .text-head2 {
   font-size: 1.5em;
-  color: white;
+  color: $white-main;
 }
 
 .black {
@@ -329,7 +333,7 @@ img {
   }
 
   .topnav a {
-    color: white;
+    color: $white-main;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -337,7 +341,7 @@ img {
   }
 
   .topnav a.icon {
-    background: #feb139;
+    background: $orange-main;
     display: block;
     position: absolute;
     right: 0;
@@ -345,12 +349,12 @@ img {
   }
 
   .topnav a:hover {
-    background-color: #feb139;
+    background-color: $orange-main;
     color: black;
   }
 
   .active {
-    color: white;
+    color: $white-main;
   }
 
   #logo-nav {

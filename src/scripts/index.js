@@ -1,6 +1,6 @@
 'use strict';
 
-import '../styles/main.css';
+import '../styles/main.scss';
 import '/src/scripts/main.js';
 
 import 'regenerator-runtime'; /* for async await transpile */
