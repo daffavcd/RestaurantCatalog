@@ -9,12 +9,12 @@
       document.body.scrollTop >= 280 ||
       document.documentElement.scrollTop >= 280
     ) {
-      myNav.classList.add('white');
+      myNav.classList.add('white-nav');
       listku1.classList.add('black');
       listku2.classList.add('black');
       listku3.classList.add('black');
     } else {
-      myNav.classList.remove('white');
+      myNav.classList.remove('white-nav');
       listku1.classList.remove('black');
       listku2.classList.remove('black');
       listku3.classList.remove('black');
