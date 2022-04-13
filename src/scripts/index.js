@@ -1,22 +1,31 @@
 'use strict';
-import 'regenerator-runtime'; /* for async await transpile */
+
 import '../styles/main.css';
+import '/src/scripts/main.js';
+
+import 'regenerator-runtime'; /* for async await transpile */
 
 import '@fontsource/poppins';
-import 'rater-js';
+import '@fontsource/open-sans';
+
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 import data_resto from '../DATA.json';
 
 let html = '';
 data_resto.restaurants.forEach((resto) => {
   html += `
-  <article class="card">
+  <article class="card explore-image">
+  <a href="#" target="_blank">
   <div class="row relative">
     <img style="height: 315px;"
       src="${resto.pictureId}"
       alt="${resto.name}"
     />
-    <div class="image-badge">Kota ${resto.city}</div>
+    <div class="image-badge">${resto.city} State</div>
   </div>
   <div class="card-body">
     <div class="row inline-block">
@@ -36,7 +45,9 @@ data_resto.restaurants.forEach((resto) => {
     </div>
     <p style="margin-top: -10px">${limit(resto.description, 200)}...</p>
   </div>
-</article>`;
+  </a>
+  </article>
+  `;
   document.getElementById('explore-content').innerHTML = html;
 });
 
