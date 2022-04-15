@@ -20,7 +20,7 @@ let html = '';
 data_resto.restaurants.forEach((resto) => {
   html += `
   <article class="card explore-image">
-  <a href="#" target="_blank">
+  <a href="/detail.html">
   <div class="row relative">
     <img style="height: 315px;"
       src="${resto.pictureId}"
