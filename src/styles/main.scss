@@ -244,6 +244,16 @@ li a:hover,
   margin: 0px 10px 25px 10px;
   // border-radius: 40px;
 }
+
+.card--comment {
+  // flex: 1 0 28%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 32%;
+  margin: 0px 10px 25px 10px;
+  // border-radius: 40px;
+}
+
 .card--favourites {
   flex: 1 0 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -391,7 +401,26 @@ img {
   margin: 10px 5px 5px 0px;
 }
 
+input[type='text'],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 767px) {
+  .card--comment {
+    flex: 1 0 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 32%;
+    margin: 0px 10px 25px 10px;
+    // border-radius: 40px;
+  }
+
   .topnav {
     display: block;
     overflow: hidden;
