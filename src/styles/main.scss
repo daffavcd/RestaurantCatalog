@@ -195,6 +195,10 @@ li a:hover,
   width: 100%;
 }
 
+.container--favourites {
+  padding: 15px 130px 15px 120px;
+}
+
 .flex {
   display: flex;
   float: none;
@@ -239,6 +243,14 @@ li a:hover,
   width: 32%;
   margin: 0px 10px 25px 10px;
   // border-radius: 40px;
+}
+.card--favourites {
+  flex: 1 0 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 32%;
+  margin: 0px 10px 25px 10px;
+  border-radius: 5px;
 }
 
 .my-btn {
@@ -373,12 +385,26 @@ img {
   right: 15%;
 }
 
+.header--favourites {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 10px 5px 5px 0px;
+}
+
 @media screen and (max-width: 767px) {
   .topnav {
     display: block;
     overflow: hidden;
     background-color: #333;
     position: relative;
+  }
+
+  .container--favourites {
+    padding: 15px 30px 15px 15px;
+  }
+
+  .row--favourites {
+    display: block;
   }
 
   #nav-desktop {
@@ -442,7 +468,7 @@ img {
     color: black;
   }
 
-  .card--review{
+  .card--review {
     flex: 1 0 90%;
   }
 

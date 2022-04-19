@@ -7,7 +7,7 @@
     <title>My Desired Utopias - Restaurant Apps</title>
   </head>
   <body>
-    <a href="#explore-content" class="skip-link">Skip to content</a>
+    <a href="#detail-content" class="skip-link">Skip to content</a>
     <header>
       <nav class="my-header white-nav" id="my-header">
         <div class="flex p-15" id="nav-desktop">
@@ -23,11 +23,16 @@
           <div class="hundred">
             <ul class="my-ul">
               <li><a href="/" class="black" id="my-list1">Home</a></li>
-              <li><a href="/favourites" class="black" id="my-list2">Favourite</a></li>
+              <li>
+                <a href="/favourites.html" class="black" id="my-list2"
+                  >Favourite</a
+                >
+              </li>
               <li>
                 <a
                   href="https://github.com/daffavcd"
-                  id="my-list3" class="black"
+                  id="my-list3"
+                  class="black"
                   target="_blank"
                   rel="noopener"
                   >About Me</a
@@ -45,7 +50,7 @@
               alt="Logo The Promised Desire"
             />
           </a>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <a href="javascript:void(0);" id="hamburger-btn" class="icon">
             <i class="fa fa-bars"></i>
           </a>
           <div id="myLinks">
@@ -82,7 +87,9 @@
           <div class="row flex">
             <div class="card-header--detail row">
               <div class="row inline-block">
-                <div class="left"><h1 class="header-font">Bring Your Phone Cafe</h1></div>
+                <div class="left">
+                  <h1 class="header-font">Bring Your Phone Cafe</h1>
+                </div>
                 <div class="right flex mt-20">
                   <div>
                     <img
@@ -175,14 +182,14 @@
       </div>
     </footer>
     <script>
-      function myFunction() {
+      document.getElementById('hamburger-btn').onclick = function () {
         var x = document.getElementById('myLinks');
         if (x.style.display === 'block') {
           x.style.display = 'none';
         } else {
           x.style.display = 'block';
         }
-      }
+      };
     </script>
   </body>
 </html>

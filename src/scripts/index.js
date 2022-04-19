@@ -1,7 +1,6 @@
 'use strict';
 
 import '../styles/main.scss';
-import '/src/scripts/main.js';
 
 import 'regenerator-runtime'; /* for async await transpile */
 
@@ -55,3 +54,12 @@ data_resto.restaurants.forEach((resto) => {
 function limit(string = '', limit = 0) {
   return string.substring(0, limit);
 }
+
+document.getElementById('hamburger-btn').onclick = function () {
+  var x = document.getElementById('myLinks');
+  if (x.style.display === 'block') {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+};
