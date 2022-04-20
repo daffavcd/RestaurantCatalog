@@ -7,6 +7,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantRaw = await RestaurantDicoding.detail(url.id);
     const restaurant = restaurantRaw.restaurant;
+    console.log(restaurant.categories);
     return `
         <div class="container">
         <div class="row text-center">
@@ -43,7 +44,9 @@ const Detail = {
                     <p>${restaurant.address}, ${restaurant.city}</p>
                   </div>
                   <div class="row" style="color: #ab9e9e; margin-top: -15px">
-                    <p>TBA</p>
+                    <p>${restaurant.categories.map(
+                      (element) => element.name
+                    )}</p>
                   </div>
                 </div>
                 <div class="right">
@@ -72,13 +75,21 @@ const Detail = {
           <div class="row">
             <h3><i class="fa fa-cutlery"></i> FOODS</h3>
             <div class="row item-menu" id="restaurant-foods">
-              <h4 class="golden">TBA</h4>      
+            ${restaurant.menus.foods
+              .map(function (element) {
+                return '<h4 class="golden">' + element.name + '</h4>';
+              })
+              .join('')}
             </div>
           </div>
           <div class="row">
             <h3><i class="fa fa-coffee"></i> DRINKS</h3>
             <div class="row item-menu" id="restaurant-drinks">
-              <h4 class="golden">TBA</h4>
+              ${restaurant.menus.drinks
+                .map(function (element) {
+                  return '<h4 class="golden">' + element.name + '</h4>';
+                })
+                .join('')}
             </div>
           </div>
         </article>
@@ -106,22 +117,28 @@ const Detail = {
         </div>
       </div>
       <div class="container flex-wrap p-15" id="reviews-content">
-        <div class="card--review p-15">
+      ${restaurant.customerReviews
+        .map(function (element) {
+          return `
+          <div class="card--review p-15">
           <div class="row flex">
             <div>
               <i class="fa fa-user-circle" style="font-size: 50px"></i>
             </div>
             <div style="text-align: left; padding: 0px 0px 0px 15px">
-              <font>Ahmad</font> <br />
+              <font>${element.name}</font> <br />
               <font style="font-size: 14px; color: slategray"
-                >13 November 2019</font
+                >${element.date}</font
               >
             </div>
           </div>
           <div class="row" style="text-align: left; margin-top: 10px">
-            Tidak rekomendasi untuk pelajar!
+            ${element.review}
           </div>
         </div>
+          `;
+        })
+        .join('')}
       </div>
       `;
   },
