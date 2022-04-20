@@ -3,7 +3,7 @@ import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
-  constructor({ button, drawer, banner, content }) {
+  constructor({ button, drawer, banner, content, linkMenu }) {
     this._button = button;
     this._drawer = drawer;
     this._banner = banner;
@@ -30,7 +30,7 @@ class App {
     } else {
       this._banner.innerHTML = null;
     }
-    
+
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }

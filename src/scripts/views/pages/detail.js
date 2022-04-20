@@ -7,7 +7,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantRaw = await RestaurantDicoding.detail(url.id);
     const restaurant = restaurantRaw.restaurant;
-    console.log(restaurant.categories);
+
     return `
         <div class="container">
         <div class="row text-center">
@@ -106,11 +106,14 @@ const Detail = {
             <div class="row" style="text-align: left; padding: 0px 0px 0px 15px">
               <font>You</font> <br />
               <div class="row flex">
+              <form id="review-form">
                 <input
                   type="text"
+                  id="myComment"
                   placeholder="Add your review..."
                 />
-                <button class="my-btn" style="margin-left: 15px;">Comment</button>
+                <button class="my-btn" type="submit" style="margin-left: 15px;">Comment</button>
+              </form>
               </div>
             </div>
           </div>
@@ -145,6 +148,23 @@ const Detail = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurantRaw = await RestaurantDicoding.detail(url.id);
+    const restaurant = restaurantRaw.restaurant;
+    
+    const form = document.querySelector('#review-form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const myComment = document.getElementById('myComment').value;
+      const obj = {
+        id: restaurant.id,
+        name: 'daffavcd',
+        review: myComment
+      };
+      // console.log(obj);
+      const restaurantRaw = await RestaurantDicoding.insert(obj);
+      location.reload();
+    });
   },
 };
 

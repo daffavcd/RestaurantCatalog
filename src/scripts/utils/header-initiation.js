@@ -1,5 +1,5 @@
 const DrawerInitiator = {
-  init({ button, drawer, content }) {
+  init({ button, drawer, content, linkMenu }) {
     button.addEventListener('click', (event) => {
       if (drawer.classList.contains('block')) {
         drawer.classList.remove('block');
@@ -11,6 +11,8 @@ const DrawerInitiator = {
     content.addEventListener('click', (event) => {
       drawer.classList.remove('block');
     });
+
+    
   },
 };
 
