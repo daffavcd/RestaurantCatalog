@@ -4,7 +4,7 @@ import Home from '../views/pages/home';
 
 const routes = {
   '/': Home, // default page
-  '/detail': Detail,
+  '/detail/:id': Detail,
   '/favourites': Favourites,
 };
 

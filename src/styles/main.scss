@@ -6,6 +6,10 @@ $white-main: #ffffff;
   display: none;
 }
 
+.none {
+  display: none;
+}
+
 .topnav {
   display: none;
 }
@@ -409,6 +413,10 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.block {
+  display: block !important;
 }
 
 @media screen and (max-width: 767px) {
