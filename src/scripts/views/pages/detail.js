@@ -10,7 +10,12 @@ const Detail = {
     const restaurant = restaurantRaw.restaurant;
 
     return `
-      <div class="container p-15 flex-wrap first-container" id="detail-content">
+      <div class="container first-container">
+        <div class="row text-center">
+          <h1>Details Utopia</h1>
+        </div>
+      </div>
+      <div class="container p-15 flex-wrap" id="detail-content">
         <article class="card-main-detail explore-image" style="padding: 20px">
           <div class="row flex">
             <div class="card-header--detail row">
@@ -170,9 +175,11 @@ const Detail = {
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
-        city: restaurant.city,
-        address: restaurant.address,
         pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+        address: restaurant.address,
+        city: restaurant.city,
+        categories: restaurant.categories,
       },
     });
   },
