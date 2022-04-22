@@ -1,16 +1,7 @@
 const Favourites = {
   async render() {
     return `
-        <div class="container">
-        <div class="row text-center">
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-      </div>
-
-      <div class="row text-center">
+      <div class="row text-center first-container">
         <h1>Favourites Restaurant</h1>
       </div>
       <div class="container p-15 flex-wrap container--favourites" id="favourites-content">
@@ -57,7 +48,11 @@ const Favourites = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    //adding black text navbar
+    document.getElementById('my-header').classList.add('white-nav');
+    document.getElementById('my-list1').classList.add('black');
+    document.getElementById('my-list2').classList.add('black');
+    document.getElementById('my-list3').classList.add('black');
   },
 };
 

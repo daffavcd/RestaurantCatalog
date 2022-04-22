@@ -1,5 +1,6 @@
 import RestaurantDicoding from '../../data/restaurant-dicoding';
 import API_ENDPOINT from '../../globals/api-endpoint';
+import UrlParser from '../../routes/url-parser';
 
 const Home = {
   async renderBanner() {
@@ -46,7 +47,39 @@ const Home = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    //remove black text navbar & activate scroll window action
+
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    console.log(url);
+
+    document.getElementById('my-header').classList.remove('white-nav');
+    document.getElementById('my-list1').classList.remove('black');
+    document.getElementById('my-list2').classList.remove('black');
+    document.getElementById('my-list3').classList.remove('black');
+
+    var myNav = document.getElementById('my-header');
+    var listku1 = document.getElementById('my-list1');
+    var listku2 = document.getElementById('my-list2');
+    var listku3 = document.getElementById('my-list3');
+
+    window.onscroll = function () {
+      'use strict';
+      if (
+        document.body.scrollTop >= 280 ||
+        document.documentElement.scrollTop >= 280
+      ) {
+        myNav.classList.add('white-nav');
+        listku1.classList.add('black');
+        listku2.classList.add('black');
+        listku3.classList.add('black');
+      } else {
+        myNav.classList.remove('white-nav');
+        listku1.classList.remove('black');
+        listku2.classList.remove('black');
+        listku3.classList.remove('black');
+      }
+    };
+
     const restaurant = await RestaurantDicoding.list();
 
     let html = '';

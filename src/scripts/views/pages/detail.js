@@ -1,6 +1,7 @@
 import RestaurantDicoding from '../../data/restaurant-dicoding';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import UrlParser from '../../routes/url-parser';
+import FavouriteButtonInitiator from '../../utils/favourite-button-initiator';
 
 const Detail = {
   async render() {
@@ -9,15 +10,7 @@ const Detail = {
     const restaurant = restaurantRaw.restaurant;
 
     return `
-        <div class="container">
-        <div class="row text-center">
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-      </div>
-      <div class="container p-15 flex-wrap" id="detail-content">
+      <div class="container p-15 flex-wrap first-container" id="detail-content">
         <article class="card-main-detail explore-image" style="padding: 20px">
           <div class="row flex">
             <div class="card-header--detail row">
@@ -49,10 +42,9 @@ const Detail = {
                     )}</p>
                   </div>
                 </div>
-                <div class="right">
-                  <button class="my-btn">
-                    <i class="fa fa-plus"></i> Add to favorites
-                  </button>
+                <div class="right" id="favourite-container">
+                  
+                  
                 </div>
               </div>
             </div>
@@ -106,7 +98,7 @@ const Detail = {
             <div class="row" style="text-align: left; padding: 0px 0px 0px 15px">
               <font>You</font> <br />
               <div class="row flex">
-              <form id="review-form">
+              <form id="review-form" class="flex">
                 <input
                   type="text"
                   id="myComment"
@@ -147,11 +139,17 @@ const Detail = {
   },
 
   async afterRender() {
+    //adding black text navbar
+    document.getElementById('my-header').classList.add('white-nav');
+    document.getElementById('my-list1').classList.add('black');
+    document.getElementById('my-list2').classList.add('black');
+    document.getElementById('my-list3').classList.add('black');
+
     // Fungsi ini akan dipanggil setelah render()
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantRaw = await RestaurantDicoding.detail(url.id);
     const restaurant = restaurantRaw.restaurant;
-    
+
     const form = document.querySelector('#review-form');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -159,11 +157,23 @@ const Detail = {
       const obj = {
         id: restaurant.id,
         name: 'daffavcd',
-        review: myComment
+        review: myComment,
       };
       // console.log(obj);
       const restaurantRaw = await RestaurantDicoding.insert(obj);
       location.reload();
+    });
+
+    // Favourite function
+    FavouriteButtonInitiator.init({
+      favouriteButtonContainer: document.querySelector('#favourite-container'),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        city: restaurant.city,
+        address: restaurant.address,
+        pictureId: restaurant.pictureId,
+      },
     });
   },
 };
