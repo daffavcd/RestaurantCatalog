@@ -52,6 +52,7 @@
     "poppins-font": "^1.0.1",
     "rater-js": "^1.0.1",
     "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "stars-rating": "^1.1.0"
   }
 }

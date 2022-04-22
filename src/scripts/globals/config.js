@@ -4,6 +4,7 @@ const CONFIG = {
   DATABASE_NAME: 'catalog-resto-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restos',
+  CACHE_NAME: 'RestaurantCatalogue-V1'
 };
 
 export default CONFIG;

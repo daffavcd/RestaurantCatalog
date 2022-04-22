@@ -19,6 +19,7 @@ import data_resto from '../DATA.json';
 import RestaurantDicoding from './data/restaurant-dicoding';
 import ApiEndpoint from './globals/api-endpoint';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburger-btn'),
@@ -33,5 +34,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
-

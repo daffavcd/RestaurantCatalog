@@ -422,6 +422,9 @@ select {
   margin-top: 250px;
 }
 @media screen and (max-width: 767px) {
+  .header-font {
+    font-size: 1.2em;
+  }
   .card--comment {
     flex: 1 0 90%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
