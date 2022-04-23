@@ -107,9 +107,10 @@ const Detail = {
                 <input
                   type="text"
                   id="myComment"
+                  label="WriteComment"
                   placeholder="Add your review..."
                 />
-                <button class="my-btn min-44" type="submit" style="margin-left: 15px;"><i class="fa fa-paper-plane"></i></button>
+                <button class="my-btn min-44" type="submit" label="InsertComment" style="margin-left: 15px;"><i class="fa fa-paper-plane"></i></button>
               </form>
               </div>
             </div>
@@ -167,7 +168,7 @@ const Detail = {
       // console.log(obj);
       const reviewsResponse = await RestaurantDicoding.insert(obj);
       const reviewsContent = document.querySelector('#reviews-content');
-      document.querySelector('#myComment').value='';
+      document.querySelector('#myComment').value = '';
       // GET INSERTED REVIEWS
       reviewsContent.innerHTML = reviewsResponse
         .map(function (element) {

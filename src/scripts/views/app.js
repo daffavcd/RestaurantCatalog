@@ -32,12 +32,12 @@ class App {
     window.onscroll = function () {
       'use strict';
       if (url === '/' || url === '') {
-        console.log('scrolled!');
+        // console.log('scrolled!');
         if (
           document.body.scrollTop >= 280 ||
           document.documentElement.scrollTop >= 280
         ) {
-          alert('scrolled!!');
+          // alert('scrolled!!');
           myNav.classList.add('white-nav');
           listku1.classList.add('black');
           listku2.classList.add('black');

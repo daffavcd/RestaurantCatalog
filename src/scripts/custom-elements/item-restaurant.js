@@ -112,7 +112,7 @@ export class ItemRestaurant extends LitElement {
         <a href="#/detail/${this.id}">
           <div class="row relative">
             <img
-              style="height: 315px;"
+              style="height: 315px;object-fit: cover;"
               src="${API_ENDPOINT.IMAGE_MEDIUM(this.pictureId)}"
               alt="${this.name}"
             />
