@@ -5,7 +5,7 @@ const Favourites = {
     return `
        <div class="container first-container">
         <div class="row text-center">
-          <h1>Favourites Utopias</h1>
+          <h1>Favourites Utopia</h1>
         </div>
       </div>
       <div class="container p-15 flex-wrap container--favourites" id="favourites-content">
