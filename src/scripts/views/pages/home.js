@@ -1,7 +1,5 @@
 import RestaurantDicoding from '../../data/restaurant-dicoding';
-import API_ENDPOINT from '../../globals/api-endpoint';
 import UrlParser from '../../routes/url-parser';
-import ItemRestaurant from '../../custom-elements/item-restaurant';
 
 const Home = {
   async renderBanner() {
@@ -48,7 +46,7 @@ const Home = {
   },
 
   async afterRender() {
-    //remove black text navbar & activate scroll window action
+    //  remove black text navbar & activate scroll window action
 
     const url = UrlParser.parseActiveUrlWithCombiner();
     console.log(url);
@@ -58,10 +56,10 @@ const Home = {
     document.getElementById('my-list2').classList.remove('black');
     document.getElementById('my-list3').classList.remove('black');
 
-    var myNav = document.getElementById('my-header');
-    var listku1 = document.getElementById('my-list1');
-    var listku2 = document.getElementById('my-list2');
-    var listku3 = document.getElementById('my-list3');
+    const myNav = document.getElementById('my-header');
+    const listku1 = document.getElementById('my-list1');
+    const listku2 = document.getElementById('my-list2');
+    const listku3 = document.getElementById('my-list3');
 
     window.onscroll = function () {
       'use strict';
@@ -84,7 +82,7 @@ const Home = {
     const restaurant = await RestaurantDicoding.list();
     let html = '';
     restaurant.restaurants.forEach((resto) => {
-      // for this i don't use object cause it cannot be pass to litclass (idu i stuck for like 4hours kak)
+      // for this i don't use object property on LIT cause it somehow cannot be pass to litclass (id understand i stuck for like 4hours kak :))
       html += `
       <item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>
       `;

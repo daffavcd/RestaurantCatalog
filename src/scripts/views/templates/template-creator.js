@@ -1,15 +1,16 @@
-import CONFIG from '../../globals/config';
-import API_ENDPOINT from '../../globals/api-endpoint';
+import apiEndpoint from '../../globals/api-endpoint';
 
 const createFavouriteButtonTemplate = () => `
     <button aria-label="favourite this movie" id="favourite-btn" class="my-btn">
-        <i class="fa fa-plus"></i> Add to favorites
+        <i class="fa fa-plus">
+        </i> Add to favorites
     </button>
 `;
 
 const createFavouritedButtonTemplate = () => `
     <button aria-label="unfavourite this movie" id="favourite-btn" class="my-btn">
-        <i class="fa fa-minus"></i> Remove to favorites
+        <i class="fa fa-minus">
+        </i> Remove to favorites
     </button>
 `;
 
@@ -20,7 +21,7 @@ const createFavoritesRestaurantTemplate = (resto) => `
               <div>
                 <img
                   style="width: 450px; border-radius: 5px 0px 0px 5px"
-                  src="${API_ENDPOINT.IMAGE_MEDIUM(resto.pictureId)}"
+                  src="${apiEndpoint.IMAGE_MEDIUM(resto.pictureId)}"
                   alt="${resto.name}"
                 />
               </div>

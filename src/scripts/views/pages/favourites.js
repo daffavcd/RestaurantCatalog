@@ -15,13 +15,13 @@ const Favourites = {
   },
 
   async afterRender() {
-    //adding black text navbar
+    //  adding black text navbar
     document.getElementById('my-header').classList.add('white-nav');
     document.getElementById('my-list1').classList.add('black');
     document.getElementById('my-list2').classList.add('black');
     document.getElementById('my-list3').classList.add('black');
 
-    //--------------
+    //  --------------
     const restaurant = await FavoriteRestaurantIdb.getAllRestaurants();
     const favouritesContainer = document.querySelector('#favourites-content');
     restaurant.forEach((resto) => {

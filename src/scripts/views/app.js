@@ -23,16 +23,22 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+    //  LOADERJS
 
-    //IF ELSE BANNER
+    //  IF ELSE BANNER
     if (url == '/') {
       this._banner.innerHTML = await page.renderBanner();
     } else {
       this._banner.innerHTML = null;
     }
 
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    try {
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+      JsLoadingOverlay.hide();
+    } catch (error) {
+      alert('ouch somehow data cannot be retrieved! (500)');
+    }
   }
 }
 

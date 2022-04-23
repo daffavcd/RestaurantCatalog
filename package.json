@@ -6,7 +6,9 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "test": "karma start",
+    "lint": "eslint ./src",
+    "stylelint-check": "stylelint-config-prettier-check"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -17,8 +19,11 @@
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
+    "doctrine": "^3.0.0",
     "eslint": "^8.13.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.3.0",
     "jasmine-ajax": "^4.0.0",
@@ -32,6 +37,7 @@
     "sass": "^1.50.0",
     "sass-loader": "^10.0.5",
     "style-loader": "^1.2.1",
+    "stylelint-config-prettier": "^9.0.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
@@ -49,6 +55,7 @@
     "fontsource-poppins": "^4.0.0",
     "idb": "^7.0.1",
     "jquery": "^2.2.4",
+    "js-loading-overlay": "^1.2.0",
     "lit": "^2.2.2",
     "poppins-font": "^1.0.1",
     "rater-js": "^1.0.1",

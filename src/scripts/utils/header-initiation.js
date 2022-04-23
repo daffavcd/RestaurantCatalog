@@ -11,8 +11,6 @@ const DrawerInitiator = {
     content.addEventListener('click', (event) => {
       drawer.classList.remove('block');
     });
-
-    
   },
 };
 

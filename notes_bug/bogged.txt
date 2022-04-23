@@ -1,0 +1,7 @@
+kak coba minta tolong izin dicekkin kalau boleh. Jadi saya ada beberapa pertanyaan
+1. pada tampilan desktop ada bug di saat scroll body home, kan itu saya merubah navbar menjadi tidak transparant.
+nah ketika berpindah halaman itu, ketika scroll keatas lagi dia tetap transparant padahal disetiap render halaman selain home itu sudah saya kasih add class.
+ini sudah saya coba debug" tapi kok saya tidak paham sepertinya.
+2. saat melakukan post review itu tekadang bisa kadang tidak bekerja (coba di unregs sw). *saya tidak paham bagian ini hehe
+3. bagaimana best practice penerapan indikator loading. itu saya cuman taruh di index dan di hide setelah rendered
+barang kali kakak ada solusi untuk saya. maaf kak klo banya tanya :)

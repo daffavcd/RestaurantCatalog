@@ -39,12 +39,12 @@ const Detail = {
               <div class="row inline-block">
                 <div class="left">
                   <div class="row" style="margin-top: -35px">
-                    <p>${restaurant.address}, ${restaurant.city}</p>
+                    <p>${restaurant.address} , ${restaurant.city}</p>
                   </div>
                   <div class="row" style="color: #ab9e9e; margin-top: -15px">
-                    <p>${restaurant.categories.map(
-                      (element) => element.name
-                    )}</p>
+                    <p>
+                    ${restaurant.categories.map((element) => element.name)}
+                    </p>
                   </div>
                 </div>
                 <div class="right" id="favourite-container">
@@ -144,7 +144,7 @@ const Detail = {
   },
 
   async afterRender() {
-    //adding black text navbar
+    //  adding black text navbar
     document.getElementById('my-header').classList.add('white-nav');
     document.getElementById('my-list1').classList.add('black');
     document.getElementById('my-list2').classList.add('black');
@@ -165,7 +165,7 @@ const Detail = {
         review: myComment,
       };
       // console.log(obj);
-      const restaurantRaw = await RestaurantDicoding.insert(obj);
+      await RestaurantDicoding.insert(obj);
       location.reload();
     });
 

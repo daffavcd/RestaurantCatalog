@@ -21,7 +21,7 @@ export class ItemRestaurant extends LitElement {
       .explore-image:hover img {
         transform: scale(1.004);
       }
-      
+
       .row {
         width: 100%;
       }

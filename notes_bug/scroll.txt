@@ -1,5 +1,0 @@
-kak coba minta tolong dicekkin kalau boleh.
-pada tampilan desktop ada bug di saat scroll body home, kan itu saya merubah navbar menjadi tidak transparant.
-nah ketika berpindah halaman itu, ketika scroll keatas lagi dia tetap transparant padahal disetiap render halaman selain home itu sudah saya kasih add class.
-ini sudah saya coba debug" tapi kok saya tidak paham sepertinya.
-barang kali kakak ada solusi untuk saya
