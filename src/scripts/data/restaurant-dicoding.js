@@ -13,13 +13,23 @@ class RestaurantDicoding {
   }
 
   static async insert(obj) {
-    const response = fetch(`${CONFIG.BASE_URL}review`, {
+    const response = await fetch(`${CONFIG.BASE_URL}review`, {
       method: 'POST',
       body: JSON.stringify(obj),
       headers: {
         'Content-type': 'application/json',
       },
-    });
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error('Data gagal ditambahkan!');
+      })
+      .then((res) => res.customerReviews)
+      .catch((error) => {
+        console.log(error);
+      });
 
     return response;
   }

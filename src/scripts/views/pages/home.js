@@ -57,30 +57,10 @@ const Home = {
     document.getElementById('my-list2').classList.remove('black');
     document.getElementById('my-list3').classList.remove('black');
 
-    const myNav = document.getElementById('my-header');
-    const listku1 = document.getElementById('my-list1');
-    const listku2 = document.getElementById('my-list2');
-    const listku3 = document.getElementById('my-list3');
-
-    window.onscroll = function () {
-      'use strict';
-      if (
-        document.body.scrollTop >= 280 ||
-        document.documentElement.scrollTop >= 280
-      ) {
-        myNav.classList.add('white-nav');
-        listku1.classList.add('black');
-        listku2.classList.add('black');
-        listku3.classList.add('black');
-      } else {
-        myNav.classList.remove('white-nav');
-        listku1.classList.remove('black');
-        listku2.classList.remove('black');
-        listku3.classList.remove('black');
-      }
-    };
-
+    JsLoadingOverlay.show();
     const restaurant = await RestaurantDicoding.list();
+    JsLoadingOverlay.hide();
+
     let html = '';
     restaurant.restaurants.forEach((resto) => {
       // console.log(resto.id);

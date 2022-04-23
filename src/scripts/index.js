@@ -31,7 +31,6 @@ JsLoadingOverlay.setOptions({
   overlayZIndex: 9998,
   spinnerZIndex: 9999,
 });
-JsLoadingOverlay.show();
 
 const app = new App({
   button: document.querySelector('#hamburger-btn'),

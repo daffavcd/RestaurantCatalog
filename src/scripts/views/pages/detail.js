@@ -94,7 +94,7 @@ const Detail = {
       <div class="row text-center">
         <h1>Customer Reviews</h1>
       </div>
-      <div class="container p-15" id="reviews-content">
+      <div class="container p-15" id="comment-section">
         <div class="card--comment p-15">
           <div class="row flex">
             <div>
@@ -103,13 +103,13 @@ const Detail = {
             <div class="row" style="text-align: left; padding: 0px 0px 0px 15px">
               <font>You</font> <br />
               <div class="row flex">
-              <form id="review-form" class="flex">
+              <form id="review-form" class="flex min-44">
                 <input
                   type="text"
                   id="myComment"
                   placeholder="Add your review..."
                 />
-                <button class="my-btn" type="submit" style="margin-left: 15px;">Comment</button>
+                <button class="my-btn min-44" type="submit" style="margin-left: 15px;"><i class="fa fa-paper-plane"></i></button>
               </form>
               </div>
             </div>
@@ -165,8 +165,32 @@ const Detail = {
         review: myComment,
       };
       // console.log(obj);
-      await RestaurantDicoding.insert(obj);
-      location.reload();
+      const reviewsResponse = await RestaurantDicoding.insert(obj);
+      const reviewsContent = document.querySelector('#reviews-content');
+      document.querySelector('#myComment').value='';
+      // GET INSERTED REVIEWS
+      reviewsContent.innerHTML = reviewsResponse
+        .map(function (element) {
+          return `
+          <div class="card--review p-15">
+          <div class="row flex">
+            <div>
+              <i class="fa fa-user-circle" style="font-size: 50px"></i>
+            </div>
+            <div style="text-align: left; padding: 0px 0px 0px 15px">
+              <font>${element.name}</font> <br />
+              <font style="font-size: 14px; color: slategray"
+                >${element.date}</font
+              >
+            </div>
+          </div>
+          <div class="row" style="text-align: left; margin-top: 10px">
+            ${element.review}
+          </div>
+        </div>
+          `;
+        })
+        .join('');
     });
 
     // Favourite function
