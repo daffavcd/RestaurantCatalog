@@ -85,9 +85,15 @@ const Home = {
     let html = '';
     restaurant.restaurants.forEach((resto) => {
       // for this i don't use object cause it cannot be pass to litclass (idu i stuck for like 4hours kak)
-      html += `<item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>`;
+      html += `
+      <item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>
+      `;
       document.getElementById('explore-content').innerHTML = html;
     });
+  },
+
+  limit(string = '', limit = 0) {
+    return string.substring(0, limit);
   },
 };
 

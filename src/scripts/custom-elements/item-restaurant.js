@@ -5,14 +5,15 @@ import { html, css, LitElement } from 'lit';
 export class ItemRestaurant extends LitElement {
   static get styles() {
     return css`
-      .card {
+      :host {
+        background-color: aliceblue;
         flex: 1 0 31%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
         width: 32%;
         margin: 0px 10px 25px 10px;
-        // border-radius: 40px;
       }
+
       .explore-image img {
         transition: transform 1s, filter 0.5s ease-out;
       }
@@ -20,6 +21,7 @@ export class ItemRestaurant extends LitElement {
       .explore-image:hover img {
         transform: scale(1.004);
       }
+      
       .row {
         width: 100%;
       }
@@ -84,7 +86,7 @@ export class ItemRestaurant extends LitElement {
       }
 
       @media screen and (max-width: 767px) {
-        .card {
+        :host {
           flex: 1 0 100%;
           margin: 0px 10px 25px 0px;
         }
@@ -106,7 +108,7 @@ export class ItemRestaurant extends LitElement {
 
   render() {
     return html`
-      <article class="card explore-image row">
+      <article class="card explore-image">
         <a href="#/detail/${this.id}">
           <div class="row relative">
             <img
