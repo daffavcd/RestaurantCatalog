@@ -1,5 +1,6 @@
 import RestaurantDicoding from '../../data/restaurant-dicoding';
 import UrlParser from '../../routes/url-parser';
+import '../../custom-elements/item-restaurant';
 
 const Home = {
   async renderBanner() {
@@ -82,6 +83,7 @@ const Home = {
     const restaurant = await RestaurantDicoding.list();
     let html = '';
     restaurant.restaurants.forEach((resto) => {
+      // console.log(resto.id);
       // for this i don't use object property on LIT cause it somehow cannot be pass to litclass (id understand i stuck for like 4hours kak :))
       html += `
       <item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>
