@@ -7,6 +7,6 @@
 
 This Project is one of my project during Front-end & Back-end web batch class.
 
-- just run npm install
+- just open dist/index.html
 
 the API itself is owned by Dicoding Indonesia.
