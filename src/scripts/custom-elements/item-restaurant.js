@@ -112,6 +112,7 @@ export class ItemRestaurant extends LitElement {
         <a href="#/detail/${this.id}">
           <div class="row relative">
             <img
+              class="lazyload"
               style="height: 315px;object-fit: cover;"
               src="${API_ENDPOINT.IMAGE_MEDIUM(this.pictureId)}"
               alt="${this.name}"
@@ -124,7 +125,7 @@ export class ItemRestaurant extends LitElement {
               <div class="right flex mt-20">
                 <div>
                   <img
-                    src="./images/heros/star.png"
+                    src="./images/core/star.png"
                     alt="Star"
                     style="width: 21px"
                   />

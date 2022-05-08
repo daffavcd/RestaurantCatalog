@@ -14,6 +14,24 @@ const createFavouritedButtonTemplate = () => `
     </button>
 `;
 
+const createSkeletonRestaurantTemplate = (count) => {
+  let template = '';
+
+  for (let i = 0; i < count; i += 1) {
+    template += `
+      <article class="card explore-image">
+        <div class="row relative">
+          <div class="row head-skeleton"></div>
+        </div>
+        <div class="card-body">
+          <div class="row body-skeleton"></div>
+        </div>
+      </article>
+  `;
+  }
+  return template;
+};
+
 const createFavoritesRestaurantTemplate = (resto) => `
     <article class="card--favourites explore-image">
           <a href="#/detail/${resto.id}">
@@ -34,7 +52,7 @@ const createFavoritesRestaurantTemplate = (resto) => `
                 <div class="flex" style="margin-top: 10px">
                   <div>
                     <img
-                      src="./images/heros/star.png"
+                      src="./images/core/star.png"
                       alt="Star"
                       style="width: 18px"
                     />
@@ -59,4 +77,5 @@ export {
   createFavouriteButtonTemplate,
   createFavouritedButtonTemplate,
   createFavoritesRestaurantTemplate,
+  createSkeletonRestaurantTemplate,
 };

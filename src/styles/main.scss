@@ -2,6 +2,31 @@ $orange-main: #feb139;
 $orange-badge: #ffd36e;
 $white-main: #ffffff;
 
+.body-skeleton {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 3px;
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  margin: 15px 0px 15px 0px;
+  height: 208px;
+}
+
+.head-skeleton {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 3px;
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  height: 315px;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
 #myLinks {
   display: none;
 }
@@ -86,7 +111,7 @@ a {
   padding: 0px 0px 0px 10px;
 }
 
-.min-44{
+.min-44 {
   min-width: 44px;
   min-height: 44px;
 }

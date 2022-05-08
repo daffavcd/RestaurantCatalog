@@ -16,6 +16,9 @@ import App from './views/app';
 import swRegister from './utils/sw-register';
 import 'js-loading-overlay';
 
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 JsLoadingOverlay.setOptions({
   overlayBackgroundColor: '#666666',
   overlayOpacity: 0.6,

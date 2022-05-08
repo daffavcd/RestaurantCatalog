@@ -2,16 +2,30 @@ import FavoriteRestaurantIdb from '../../data/favourites-restaurant';
 import { createFavoritesRestaurantTemplate } from '../templates/template-creator';
 const Favourites = {
   async render() {
-    return `
-       <div class="container first-container">
-        <div class="row text-center">
-          <h1>Favourites Utopia</h1>
-        </div>
-      </div>
-      <div class="container p-15 flex-wrap container--favourites" id="favourites-content">
-        
-      </div>
-      `;
+    const restaurant = await FavoriteRestaurantIdb.getAllRestaurants();
+    if (restaurant.length == 0) {
+      return `
+      <div class="container first-container">
+       <div class="row text-center">
+         <h1>Favourites Utopia</h1>
+       </div>
+     </div>
+     <div class="container p-15 flex-wrap container--favourites text-center" id="favourites-content">
+        <div id="restaurant-favourited__none" class="row text-center restaurant-favourited__none"><h4>You haven't favourited any movies.</h4></div>
+     </div>
+     `;
+    } else {
+      return `
+      <div class="container first-container">
+       <div class="row text-center">
+         <h1>Favourites Utopia</h1>
+       </div>
+     </div>
+     <div class="container p-15 flex-wrap container--favourites" id="favourites-content">
+       
+     </div>
+     `;
+    }
   },
 
   async afterRender() {
