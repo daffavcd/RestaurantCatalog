@@ -39,6 +39,8 @@ const createFavoritesRestaurantTemplate = (resto) => `
               <div>
                 <img
                   style="width: 450px; border-radius: 5px 0px 0px 5px"
+                  width="331"
+                  height="222"
                   src="${apiEndpoint.IMAGE_MEDIUM(resto.pictureId)}"
                   alt="${resto.name}"
                 />

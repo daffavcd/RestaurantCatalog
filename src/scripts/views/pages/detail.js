@@ -5,10 +5,6 @@ import FavouriteButtonInitiator from '../../utils/favourite-button-initiator';
 
 const Detail = {
   async render() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurantRaw = await RestaurantDicoding.detail(url.id);
-    const restaurant = restaurantRaw.restaurant;
-
     return `
       <div class="container first-container">
         <div class="row text-center">
@@ -16,8 +12,39 @@ const Detail = {
         </div>
       </div>
       <div class="container p-15 flex-wrap" id="detail-content">
-        <article class="card-main-detail explore-image" style="padding: 20px">
-          <div class="row flex">
+        <article class="card-main-detail explore-image" id="detail-left" style="padding: 20px">
+        <div class="row detail-left-skeleton"></div>
+        </article>
+        <article class="card--detail" id="detail-right">
+          <div class="row detail-right-skeleton"></div>
+        </article>
+      </div>
+      <div class="row text-center">
+        <h1>Customer Reviews</h1>
+      </div>
+      <div class="container p-15" id="comment-section">
+        <div class="card--comment p-15"><div class="row comment-skeleton"></div></div>
+      </div>
+      <div class="container flex-wrap p-15" id="reviews-content">
+        <div class="row review-skeleton"></div>
+      </div>
+      `;
+  },
+
+  async afterRender() {
+    //  adding black text navbar
+    document.getElementById('my-header').classList.add('white-nav');
+    document.getElementById('my-list1').classList.add('black');
+    document.getElementById('my-list2').classList.add('black');
+    document.getElementById('my-list3').classList.add('black');
+
+    // Fungsi ini akan dipanggil setelah render()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurantRaw = await RestaurantDicoding.detail(url.id);
+    const restaurant = restaurantRaw.restaurant;
+
+    document.querySelector('#detail-left').innerHTML = `
+    <div class="row flex">
             <div class="card-header--detail row">
               <div class="row inline-block">
                 <div class="left">
@@ -57,6 +84,8 @@ const Detail = {
           <div class="row relative">
             <img
               style="width: 100%"
+              width="820"
+              height="549"
               src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}"
               alt="${restaurant.name}"
             />
@@ -66,9 +95,10 @@ const Detail = {
               ${restaurant.description}
             </p>
           </div>
-        </article>
-        <article class="card--detail">
-          <h2>Restaurant Menu</h2>
+    `;
+
+    document.querySelector('#detail-right').innerHTML = `
+        <h2>Restaurant Menu</h2>
           <div class="row">
             <h3><i class="fas fa-cutlery"></i> FOODS</h3>
             <div class="row item-menu" id="restaurant-foods">
@@ -89,13 +119,10 @@ const Detail = {
                 .join('')}
             </div>
           </div>
-        </article>
-      </div>
-      <div class="row text-center">
-        <h1>Customer Reviews</h1>
-      </div>
-      <div class="container p-15" id="comment-section">
-        <div class="card--comment p-15">
+    `;
+
+    document.querySelector('#comment-section').innerHTML = `
+    <div class="card--comment p-15">
           <div class="row flex">
             <div>
               <i class="fas fa-user-circle" style="font-size: 50px"></i>
@@ -110,51 +137,38 @@ const Detail = {
                   label="WriteComment"
                   placeholder="Add your review..."
                 />
-                <button class="my-btn min-44" type="submit" label="InsertComment" style="margin-left: 15px;"><i class="fas fa-paper-plane"></i></button>
+                <button class="my-btn min-44" aria-label="InsertComment" id="insert-review-btn" type="submit" label="InsertComment" style="margin-left: 15px;"><i class="fas fa-paper-plane"></i></button>
               </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="container flex-wrap p-15" id="reviews-content">
-      ${restaurant.customerReviews
-        .map(function (element) {
-          return `
-          <div class="card--review p-15">
-          <div class="row flex">
-            <div>
-              <i class="fas fa-user-circle" style="font-size: 50px"></i>
-            </div>
-            <div style="text-align: left; padding: 0px 0px 0px 15px">
-              <font>${element.name}</font> <br />
-              <font style="font-size: 14px; color: slategray"
-                >${element.date}</font
-              >
-            </div>
+    `;
+
+    document.querySelector('#reviews-content').innerHTML = `
+    ${restaurant.customerReviews
+      .map(function (element) {
+        return `
+        <div class="card--review p-15">
+        <div class="row flex">
+          <div>
+            <i class="fas fa-user-circle" style="font-size: 50px"></i>
           </div>
-          <div class="row" style="text-align: left; margin-top: 10px">
-            ${element.review}
+          <div style="text-align: left; padding: 0px 0px 0px 15px">
+            <font>${element.name}</font> <br />
+            <font style="font-size: 14px; color: slategray"
+              >${element.date}</font
+            >
           </div>
         </div>
-          `;
-        })
-        .join('')}
+        <div class="row users-review" style="text-align: left; margin-top: 10px;word-wrap: break-word;">
+          ${element.review}
+        </div>
       </div>
-      `;
-  },
-
-  async afterRender() {
-    //  adding black text navbar
-    document.getElementById('my-header').classList.add('white-nav');
-    document.getElementById('my-list1').classList.add('black');
-    document.getElementById('my-list2').classList.add('black');
-    document.getElementById('my-list3').classList.add('black');
-
-    // Fungsi ini akan dipanggil setelah render()
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurantRaw = await RestaurantDicoding.detail(url.id);
-    const restaurant = restaurantRaw.restaurant;
+        `;
+      })
+      .join('')}
+    `;
 
     const form = document.querySelector('#review-form');
     form.addEventListener('submit', async (event) => {

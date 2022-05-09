@@ -7,11 +7,21 @@ import API_ENDPOINT from '../../globals/api-endpoint';
 const Home = {
   async renderBanner() {
     return `
+    <div class="row" id="banner-container">
+      <div class="row banner-skeleton"></div>
+    </div>
+        `;
+  },
+
+  async render() {
+    document.getElementById('banner-container').innerHTML = `
         <picture>
-            <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg" class="dark-overlay" style="width: 100%" alt="Hero Background">
+            <source media="(max-width: 767px)" width="360" height="240" srcset="./images/heros/hero-image_2-small.jpg" class="dark-overlay" style="width: 100%" alt="Hero Background">
             <img
           src="./images/heros/hero-image_2-large.jpg"
           class="dark-overlay"
+          width="1350"
+          height="900"
           style="width: 100%"
           alt="Hero Background"
         />
@@ -23,10 +33,8 @@ const Home = {
             >there is a fragmentary of neverland for sure.</font
           >
         </div>
-        `;
-  },
+    `;
 
-  async render() {
     return `
           <div class="container">
         <div class="row text-center">
@@ -94,11 +102,13 @@ const Home = {
   </div>
   <div class="card-body">
     <div class="row inline-block">
-      <div class="left"><h4>${resto.name}</h4></div>
+      <div class="left"><h4 class="restaurant-name-home">${
+        resto.name
+      }</h4></div>
       <div class="right flex mt-20">
         <div>
           <img
-            src="./images/heros/star.png"
+            src="./images/core/star.png"
             alt="Star"
             style="width: 21px"
           />

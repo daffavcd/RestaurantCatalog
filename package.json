@@ -9,7 +9,7 @@
     "test": "karma start",
     "lint": "eslint ./src",
     "stylelint-check": "stylelint-config-prettier-check",
-    "e2e": "codeceptjs run --steps",
+    "e2e": "codeceptjs run --debug",
     "build-image": "node sharp.js"
   },
   "keywords": [],
@@ -67,6 +67,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^2.0.6",
+    "assert": "^2.0.0",
     "babel-minify-webpack-plugin": "^0.3.1",
     "expose-loader": "^0.7.5",
     "fa-icons": "^0.2.0",
