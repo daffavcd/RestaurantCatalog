@@ -26,7 +26,7 @@ const Detail = {
                 <div class="right flex mt-20">
                   <div>
                     <img
-                      src="./images/heros/star.png"
+                      src="./images/core/star.png"
                       alt="Star"
                       style="width: 21px"
                     />
@@ -70,7 +70,7 @@ const Detail = {
         <article class="card--detail">
           <h2>Restaurant Menu</h2>
           <div class="row">
-            <h3><i class="fa fa-cutlery"></i> FOODS</h3>
+            <h3><i class="fas fa-cutlery"></i> FOODS</h3>
             <div class="row item-menu" id="restaurant-foods">
             ${restaurant.menus.foods
               .map(function (element) {
@@ -80,7 +80,7 @@ const Detail = {
             </div>
           </div>
           <div class="row">
-            <h3><i class="fa fa-coffee"></i> DRINKS</h3>
+            <h3><i class="fas fa-coffee"></i> DRINKS</h3>
             <div class="row item-menu" id="restaurant-drinks">
               ${restaurant.menus.drinks
                 .map(function (element) {
@@ -98,7 +98,7 @@ const Detail = {
         <div class="card--comment p-15">
           <div class="row flex">
             <div>
-              <i class="fa fa-user-circle" style="font-size: 50px"></i>
+              <i class="fas fa-user-circle" style="font-size: 50px"></i>
             </div>
             <div class="row" style="text-align: left; padding: 0px 0px 0px 15px">
               <font>You</font> <br />
@@ -110,7 +110,7 @@ const Detail = {
                   label="WriteComment"
                   placeholder="Add your review..."
                 />
-                <button class="my-btn min-44" type="submit" label="InsertComment" style="margin-left: 15px;"><i class="fa fa-paper-plane"></i></button>
+                <button class="my-btn min-44" type="submit" label="InsertComment" style="margin-left: 15px;"><i class="fas fa-paper-plane"></i></button>
               </form>
               </div>
             </div>
@@ -124,7 +124,7 @@ const Detail = {
           <div class="card--review p-15">
           <div class="row flex">
             <div>
-              <i class="fa fa-user-circle" style="font-size: 50px"></i>
+              <i class="fas fa-user-circle" style="font-size: 50px"></i>
             </div>
             <div style="text-align: left; padding: 0px 0px 0px 15px">
               <font>${element.name}</font> <br />

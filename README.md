@@ -9,4 +9,4 @@ This Project is one of my project during Front-end & Back-end web batch class.
 
 - just open dist/index.html
 
-the API itself is owned by Dicoding Indonesia.
+the API itself belong to by Dicoding Indonesia.

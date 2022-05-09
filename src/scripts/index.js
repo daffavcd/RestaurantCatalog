@@ -6,12 +6,19 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '@fontsource/poppins';
 import '@fontsource/open-sans';
 
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
-import '@fortawesome/fontawesome-free/js/all';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBars,
+  faPlus,
+  faMinus,
+  faCoffee,
+  faCutlery,
+  faPaperPlane,
+  faUserCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
+library.add(faBars,faPlus, faMinus, faCoffee, faCutlery, faPaperPlane, faUserCircle);
+dom.watch();
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import 'js-loading-overlay';

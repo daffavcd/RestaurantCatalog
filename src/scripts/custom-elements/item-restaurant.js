@@ -1,6 +1,8 @@
 import 'regenerator-runtime';
 import API_ENDPOINT from '../globals/api-endpoint';
 import { html, css, LitElement } from 'lit';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 export class ItemRestaurant extends LitElement {
   static get styles() {
@@ -112,8 +114,10 @@ export class ItemRestaurant extends LitElement {
         <a href="#/detail/${this.id}">
           <div class="row relative">
             <img
+              loading="lazy"
+              height="315px"
               class="lazyload"
-              style="height: 315px;object-fit: cover;"
+              style=";object-fit: cover;"
               src="${API_ENDPOINT.IMAGE_MEDIUM(this.pictureId)}"
               alt="${this.name}"
             />

@@ -11,7 +11,7 @@ const Favourites = {
        </div>
      </div>
      <div class="container p-15 flex-wrap container--favourites text-center" id="favourites-content">
-        <div id="restaurant-favourited__none" class="row text-center restaurant-favourited__none"><h4>You haven't favourited any movies.</h4></div>
+        <div class="row text-center restaurant-favourited__none"><h4 id="restaurant-favourited__none">You haven't favourited any restaurant.</h4></div>
      </div>
      `;
     } else {

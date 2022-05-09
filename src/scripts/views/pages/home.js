@@ -1,7 +1,8 @@
 import RestaurantDicoding from '../../data/restaurant-dicoding';
 import UrlParser from '../../routes/url-parser';
-import '../../custom-elements/item-restaurant';
+// import '../../custom-elements/item-restaurant';
 import { createSkeletonRestaurantTemplate } from '../templates/template-creator';
+import API_ENDPOINT from '../../globals/api-endpoint';
 
 const Home = {
   async renderBanner() {
@@ -32,7 +33,9 @@ const Home = {
           <h1>Explore Your Utopias</h1>
         </div>
       </div>
-      <div class="container p-15 flex-wrap" id="explore-content">${createSkeletonRestaurantTemplate(21)}</div>
+      <div class="container p-15 flex-wrap" id="explore-content">${createSkeletonRestaurantTemplate(
+        21
+      )}</div>
       <div class="container">
         <div class="row text-center p-15">
           <h1>in a collaboration with</h1>
@@ -67,12 +70,49 @@ const Home = {
     JsLoadingOverlay.hide();
 
     let html = '';
+    // SHADOW ROOT TREE BROKEN
+    // restaurant.restaurants.forEach((resto) => {
+    //   // console.log(resto.id);
+    //   // for this i don't use object property on LIT cause it somehow cannot be pass to litclass (id understand i stuck for like 4hours kak :))
+    //   html += `
+    //   <item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>
+    //   `;
+    //   document.getElementById('explore-content').innerHTML = html;
+    // });
+
     restaurant.restaurants.forEach((resto) => {
-      // console.log(resto.id);
-      // for this i don't use object property on LIT cause it somehow cannot be pass to litclass (id understand i stuck for like 4hours kak :))
       html += `
-      <item-restaurant id="${resto.id}" pictureId="${resto.pictureId}" name="${resto.name}" city="${resto.city}" name="${resto.name}" rating="${resto.rating}" description="${resto.description}"></item-restaurant>
-      `;
+  <article class="card explore-image">
+  <a href="#/detail/${resto.id}">
+  <div class="row relative">
+    <img style="height: 315px;"
+      class="lazyload"
+      src="${API_ENDPOINT.IMAGE_MEDIUM(resto.pictureId)}"
+      alt="${resto.name}"
+    />
+    <div class="image-badge">${resto.city} State</div>
+  </div>
+  <div class="card-body">
+    <div class="row inline-block">
+      <div class="left"><h4>${resto.name}</h4></div>
+      <div class="right flex mt-20">
+        <div>
+          <img
+            src="./images/heros/star.png"
+            alt="Star"
+            style="width: 21px"
+          />
+        </div>
+        <font class="b-18">
+          &nbsp${resto.rating}<font class="f-12">/5 </font>
+        </font>
+      </div>
+    </div>
+    <p style="margin-top: -10px">${this.limit(resto.description, 200)}...</p>
+  </div>
+  </a>
+  </article>
+  `;
       document.getElementById('explore-content').innerHTML = html;
     });
   },
