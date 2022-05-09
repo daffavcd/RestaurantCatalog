@@ -52,7 +52,7 @@ const Home = {
       <div class="container p-15">
         <div class="text-center relative row" style="margin-bottom: 35px">
           <img
-            src="./images/core/starbucks.png"
+            data-src="./images/core/starbucks.png"
             class="starbuck-overlay lazyload"
             style="width: 500px; margin: auto"
             alt="Starbucks"
@@ -95,7 +95,7 @@ const Home = {
   <div class="row relative">
     <img style="height: 315px;"
       class="lazyload"
-      src="${API_ENDPOINT.IMAGE_MEDIUM(resto.pictureId)}"
+      data-src="${API_ENDPOINT.IMAGE_MEDIUM(resto.pictureId)}"
       alt="${resto.name}"
     />
     <div class="image-badge">${resto.city} State</div>

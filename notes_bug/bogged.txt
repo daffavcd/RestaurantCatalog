@@ -5,3 +5,23 @@ ini sudah saya coba debug" tapi kok saya tidak paham sepertinya.
 2. saat melakukan post review itu tekadang bisa kadang tidak bekerja (coba di unregs sw). *saya tidak paham bagian ini hehe
 3. bagaimana best practice penerapan indikator loading. itu saya cuman taruh di index dan di hide setelah rendered
 barang kali kakak ada solusi untuk saya. maaf kak klo banya tanya :)
+
+Siang Kak,
+- Untuk LitElement saya hapus dan aku kembalikan ke pakai div biasa.
+*soalnya saat menggunakan lazysizes dia tidak mau terbaca si lazysizesnya && saat di automation testing pakai puppeteer dia tidak bisa membaca shadow-rootnya si LitElement kecuali pakai WebDriver -> dua ini udah aku coba cari" tapi sepertinya memang ngga bisa kak.
+
+- Untuk CLS ini udah saya coba tambahi skeleton tapi masih belum memenuhi kak
+*kalau di lighthouse ada masalah di page homenya, di si heros -> ini saya bingung kak nempatin logic render banner beserta content nya hehe.
+
+- Untuk TBT kayanya ada masalah di si bundle.js, dan fortawesome soalnya terlalu gede
+*fort awesome udah aku tree shaking dan import icon sebutuhnya saja tapi masih gede kayanya.
+*dan untuk bundle.js nya ini udah aku coba compress ke format gz tapi untuk penerapannya, saya waktu coba cari itu dia bisa otomatis kalau pake Nginx (ada settingan di kaya virtualHostnya gitu). Nah file ini yang ada problem paling gede di text Compression saat di audit.
+*ini point kedua tolong dikoreksi ya kak saya takut salah
+
+- Untuk testing scenario "Review Restoran" tidak ada pengecekan apakah review telah masuk dan sesuai
+*jadi logic saya gini "saya ambil text dan dicocokan nantinya dari div dengan class sekian di paling akhir pada div container".
+*ini saya bingung dan udah coba". akan tetapi karena sudah stuck lama akhirnya saya tinggal dulu
+
+Terima kasih kak udah dibacaa :)
+
+URL Netlify : https://magenta-trifle-3438e0.netlify.app/#/

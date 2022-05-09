@@ -5,6 +5,8 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const BabelMinifyPlugin = require('babel-minify-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   mode: 'production',
@@ -26,6 +28,7 @@ module.exports = merge(common, {
   },
   plugins: [
     // new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin(),
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({
