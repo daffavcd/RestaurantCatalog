@@ -87,6 +87,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: poppins;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -340,8 +341,8 @@ img {
     background: #feb139;
     display: block;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
   }
 
   .topnav a:hover {

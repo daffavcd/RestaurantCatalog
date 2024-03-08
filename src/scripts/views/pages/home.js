@@ -44,21 +44,6 @@ const Home = {
       <div class="container p-15 flex-wrap" id="explore-content">${createSkeletonRestaurantTemplate(
         21
       )}</div>
-      <div class="container">
-        <div class="row text-center p-15">
-          <h1>in a collaboration with</h1>
-        </div>
-      </div>
-      <div class="container p-15">
-        <div class="text-center relative row" style="margin-bottom: 35px">
-          <img
-            data-src="./images/core/starbucks.png"
-            class="starbuck-overlay lazyload"
-            style="width: 500px; margin: auto"
-            alt="Starbucks"
-          />
-        </div>
-      </div>
         `;
   },
 
